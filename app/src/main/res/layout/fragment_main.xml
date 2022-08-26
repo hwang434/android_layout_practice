@@ -52,8 +52,11 @@
             android:layout_height="80dp"
             android:minWidth="80dp"
             android:minHeight="80dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/frame_layout_circle_user_info_background"/>
+            app:layout_constraintBottom_toBottomOf="@id/frame_layout_circle_user_info_background"
+            android:background="@drawable/profile"
+            />
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_view_user_profile"
             android:layout_width="50dp"
@@ -76,9 +79,94 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image_view_user_profile"
             app:layout_constraintTop_toTopOf="parent" />
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_layout_user_detail_bmi_background"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="#03A9F4"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout_user_info_back">
+        <!-- first row -->
+        <TextView
+            android:id="@+id/text_view_weight_header"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="체중"
+            app:layout_constraintStart_toStartOf="@id/frame_layout_user_detail_bmi_background"
+            app:layout_constraintTop_toTopOf="@id/frame_layout_user_detail_bmi_background"
+            app:layout_constraintEnd_toStartOf="@id/text_view_body_fat_header"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/text_view_body_fat_header"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/text_view_weight_header"
+            app:layout_constraintTop_toTopOf="@id/frame_layout_user_detail_bmi_background"
+            app:layout_constraintEnd_toStartOf="@id/text_view_bmi_header"
+            android:text="체지방률"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/text_view_bmi_header"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="116dp"
+            app:layout_constraintStart_toEndOf="@id/text_view_weight_header"
+            app:layout_constraintTop_toTopOf="@id/frame_layout_user_detail_bmi_background"
+            app:layout_constraintEnd_toEndOf="@id/frame_layout_user_detail_bmi_background"
+            android:text="BMI"
+            android:textAlignment="center" />
+
+
+        <!-- second row -->
+        <!--        <TextView-->
+        <!--            android:id="@+id/text_view_user_weight"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="+8.75kg"-->
+
+        <!--            app:layout_constraintEnd_toEndOf="@+id/text_view_weight_header"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/text_view_weight_header"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/text_view_weight_header" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/text_view_user_bmi"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="0.0"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/text_view_body_fat_header"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/text_view_body_fat_header"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/text_view_body_fat_header" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/text_view_user_fat"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="5.4%"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/textView"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/textView"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+
+        <!--        &lt;!&ndash; third row &ndash;&gt;-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/text_view_describe"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="설명"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/text_view_user_fat" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
