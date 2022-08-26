@@ -3,10 +3,10 @@
     <solid android:color="#FFFFFF"/>
     <stroke
         android:width="3dp"
-        android:color="#FF3E3E" />
+        android:color="#FFFFFF" />
     //specify gradient
     <gradient
-        android:startColor="#ED8261"
+        android:startColor="#E8AF9D"
         android:endColor="#EB8A6C"
         android:angle="0"/>
     <padding
@@ -15,8 +15,9 @@
         android:right="5dp"
         android:bottom="5dp"/>
     <corners
-        android:bottomRightRadius="7dp"
-        android:bottomLeftRadius="7dp"
-        android:topLeftRadius="7dp"
-        android:topRightRadius="7dp"/>
+        android:radius="4500dp"/>
+<!--        android:bottomRightRadius="50dp"-->
+<!--        android:bottomLeftRadius="20dp"-->
+<!--        android:topLeftRadius="7dp"-->
+<!--    android:topRightRadius="7dp"-->
 </shape>

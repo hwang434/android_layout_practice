@@ -16,35 +16,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/frame_layout_circle_user_info_background"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/user_info_background"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/constraint_layout_user_info_back"
-            android:background="@color/black"
-            android:orientation="vertical">
+            app:layout_constraintVertical_bias="0.0">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
                 android:text="김재윤"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:textSize="15sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:textSize="24sp"
                 android:text="86.75kg"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="24sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floating_action_button_weight_target"
@@ -55,13 +57,13 @@
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/frame_layout_circle_user_info_background"
-            android:background="@drawable/profile"
+
             />
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image_view_user_profile"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/ic_launcher_background"
+            android:background="@drawable/profile_image"
             android:minWidth="50dp"
             android:minHeight="50dp"
             app:layout_constraintEnd_toStartOf="@+id/appCompatImageButton"
@@ -78,10 +80,11 @@
             android:layout_marginBottom="65dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image_view_user_profile"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/plus_button"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TableLayout
         android:id="@+id/frame_layout_user_detail_bmi_background"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -93,39 +96,67 @@
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraint_layout_user_info_back">
-        <!-- first row -->
-        <TextView
-            android:id="@+id/text_view_weight_header"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="체중"
-            app:layout_constraintStart_toStartOf="@id/frame_layout_user_detail_bmi_background"
-            app:layout_constraintTop_toTopOf="@id/frame_layout_user_detail_bmi_background"
-            app:layout_constraintEnd_toStartOf="@id/text_view_body_fat_header"
-            android:textAlignment="center"/>
+        <TableRow>
+            <!-- first row -->
+            <TextView
+                android:id="@+id/text_view_weight_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_column="0"
+                android:text="체중"
+                android:textAlignment="center"/>
 
-        <TextView
-            android:id="@+id/text_view_body_fat_header"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/text_view_weight_header"
-            app:layout_constraintTop_toTopOf="@id/frame_layout_user_detail_bmi_background"
-            app:layout_constraintEnd_toStartOf="@id/text_view_bmi_header"
-            android:text="체지방률"
-            android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/text_view_body_fat_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/text_view_weight_header"
+                app:layout_constraintTop_toTopOf="@id/frame_layout_user_detail_bmi_background"
+                app:layout_constraintEnd_toStartOf="@id/text_view_bmi_header"
+                android:layout_weight="1"
+                android:layout_column="1"
+                android:text="체지방률"
+                android:textAlignment="center"/>
 
-        <TextView
-            android:id="@+id/text_view_bmi_header"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="116dp"
-            app:layout_constraintStart_toEndOf="@id/text_view_weight_header"
-            app:layout_constraintTop_toTopOf="@id/frame_layout_user_detail_bmi_background"
-            app:layout_constraintEnd_toEndOf="@id/frame_layout_user_detail_bmi_background"
-            android:text="BMI"
-            android:textAlignment="center" />
+            <TextView
+                android:id="@+id/text_view_bmi_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_column="1"
+                android:text="BMI"
+                android:textAlignment="center" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="1"
+                android:layout_column="0"
+                android:text="30kg"
+                android:textAlignment="center">
+            </TextView>
+            <TextView
+                android:layout_weight="1"
+                android:layout_column="1"
+                android:text="14%"
+                android:textAlignment="center">
 
-
+            </TextView>
+            <TextView
+                android:layout_weight="1"
+                android:layout_column="2"
+                android:text="17%"
+                android:textAlignment="center">
+            </TextView>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="3"
+                android:textSize="14sp"
+                android:text="자세한"
+                android:textAlignment="center">
+            </TextView>
+        </TableRow>
         <!-- second row -->
         <!--        <TextView-->
         <!--            android:id="@+id/text_view_user_weight"-->
@@ -166,7 +197,7 @@
         <!--            app:layout_constraintEnd_toEndOf="parent"-->
         <!--            app:layout_constraintStart_toStartOf="parent"-->
         <!--            app:layout_constraintTop_toBottomOf="@+id/text_view_user_fat" />-->
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </TableLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
